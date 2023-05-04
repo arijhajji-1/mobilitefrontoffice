@@ -1,0 +1,64 @@
+<app-navbar-style-four></app-navbar-style-four>
+
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>List Formations</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>List Formations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="inner-banner-shape">
+        <div class="shape-one"><img src="assets/img/inner-banner/banner-shape1.png" alt="Images"></div>
+        <div class="shape-two"><img src="assets/img/inner-banner/banner-shape2.png" alt="Images"></div>
+        <div class="shape-three"><img src="assets/img/inner-banner/banner-shape3.png" alt="Images"></div>
+        <div class="inner-banner-dots"><img src="assets/img/shape/dots-shape.png" alt="Images"></div>
+    </div>
+</div>
+<h1 class="text-center my-5">Formations</h1>
+
+<div class="row">
+<div class="col-lg-4 col-md-6" *ngFor="let formation of formations" >
+  
+    <div class="case-study-card" >
+      <div class="content">
+        <h5>Subject :{{ formation.formationSubjet }}</h5>
+        <span>by {{ formation.formationFormer }}</span><br>
+        <span>Date:{{ formation.formationDate | date:'mediumDate' }}
+        </span>
+        <p> starts at :{{ formation.formationStartTime }}</p>
+        <p>Ends at :{{ formation.formationEndTime }}</p>
+      </div>
+        <button class="btn btn-primary mt-3" (click)="toggleJoin(formation)">
+          {{ formation.joined ? 'Cancel' : 'Join' }}
+        </button>
+        <button class="btn btn-secondary mt-3 ml-2" (click)="toggleFavorite(formation)">
+            <i *ngIf="!formation.isFavorite" class="bx bx-heart"></i>
+            <i *ngIf="formation.isFavorite" class="bx bxs-heart"></i>
+          </button>
+          
+     
+    </div>
+  </div>
+</div>
+  
+
+
+         
+
+           
+
+       
+        
+
+        
+         
+ 
+
+
+
+<app-footer-style-two></app-footer-style-two>
